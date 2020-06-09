@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { resolve } = require("path");
 // This is your real test secret API key.
-const stripe = require("stripe")("sk_test_a2LZDwzINdKtCd2BMdo21swn00Mqm40FPi");
+const stripe = require("stripe")("sk_test_GIqyLzquU141kcDbnY6AAiA600mv7e6HAF");
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
