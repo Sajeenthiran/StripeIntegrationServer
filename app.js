@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-app.post("/create-payment-intent", async (req, res) => {
+app.post("/payment/create-payment-intent", async (req, res) => {
     //const { items } = req.body;
     // Create a PaymentIntent with the order amount and currency
     console.log("Welcome ",req.body);
