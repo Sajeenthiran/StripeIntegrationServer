@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 app.post("/payment/create-payment-intent", async (req, res) => {
-    //const { items } = req.body;
+    const body = req.body;
     console.log("Welcome ",req.body);
     const paymentIntent = await stripe.paymentIntents.create({
-        amount: 1400,
+        amount: body.amount,
         currency: "usd"
     });
     res.send({
