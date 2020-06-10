@@ -21,4 +21,16 @@ app.post("/payment/create-payment-intent", async (req, res) => {
     });
 });
 
+app.post("/payment/create-refund-intent", async (req, res) => {
+    const body = req.body;
+    console.log("Welcome ",req.body);
+    const refund = await stripe.refunds.create({
+        amount: body.amount,
+        payment_intent: body.paymentId,
+    });
+    res.send({
+        refund
+    });
+});
+
 app.listen(4242, () => console.log('Node server listening on port 4242!'));
